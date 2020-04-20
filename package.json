@@ -1,0 +1,14 @@
+{
+  "name": "cloudant-serverless",
+  "version": "1.0.0",
+  "description": "A modern take on cloudant per user database using IBM AppID, Cloudant and Serverless Functions. This project is heavily inspired by https://github.com/glynnbird/envoy-serverless",
+  "main": "index.js",
+  "repository": "https://github.com/astamiviswakarma/cloudant-serverless.git",
+  "author": "Astami <astami@shipperstack.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "@cloudant/cloudant": "^4.2.4",
+    "request": "^2.88.2"
+  }
+}
