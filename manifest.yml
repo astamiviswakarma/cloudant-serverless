@@ -12,61 +12,61 @@ packages:
       delete:
         version: 1.0
         function: actions/del_db.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       put:
         version: 1.0
         function: actions/put_db.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       getAllDocs:
         version: 1.0
         function: actions/all_docs.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       postAllDocs:
         version: 1.0
         function: actions/all_docs.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       changes:
         version: 1.0
         function: actions/changes.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       bulkDocs:
         version: 1.0
         function: actions/bulk_docs.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       bulkGet:
         version: 1.0
         function: actions/get_bulk_get.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
         include:
           - ["actions/lib/*.js", "./lib/"]
       postBulkGet:
         version: 1.0
         function: actions/post_bulk_get.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
       revsDiff:
         version: 1.0
         function: actions/revs_diff.js
-        runtime: nodejs:8
+        runtime: nodejs:10
         web-export: true
     apis:
       CloudantAppIdFunctionsNodejs:
