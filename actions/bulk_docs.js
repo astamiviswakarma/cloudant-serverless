@@ -11,10 +11,10 @@ var filterReply = function(reply) {
   return reply;
 }
 
-function main(msg) {
+async function main(msg) {
 
   // security
-  var user_id = security.checkCredentials(msg);
+  var user_id = await security.checkCredentials(msg);
   var params = utils.allowParams(['docs', 'new_edits'], msg);
   params.new_edits = typeof params.new_edits === 'undefined' ? true : params.new_edits;
 

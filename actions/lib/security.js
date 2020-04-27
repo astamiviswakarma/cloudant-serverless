@@ -1,5 +1,5 @@
 const request = require('request');
-const _ = require('underscore');
+const _ = require('lodash');
 
 const promisifiedRequest = function(options) {
   return new Promise((resolve,reject) => {
@@ -50,9 +50,9 @@ const getUserIdFromToken = async function(appidUrl, token) {
   return extractUserIdFromResponse(response);
 }
 
-const checkCredentials = function(msg) {
+const checkCredentials = async function(msg) {
   if (msg && msg.__ow_headers && msg.__ow_headers['Authorization']) {
-    return getUserIdFromToken(msg.APPID_URL, msg.__ow_headers['Authorization']);
+    return await getUserIdFromToken(msg.APPID_URL, msg.__ow_headers['Authorization']);
   } else {
     throw( new Error('Missing authorization - unknown user'));
   }

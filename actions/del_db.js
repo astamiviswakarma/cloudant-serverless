@@ -3,9 +3,9 @@ var cloudant = require('./lib/db.js');
 var access = require('./lib/access.js');
 var utils = require('./lib/utils.js');
 
-function main(msg) {
+async function main(msg) {
 
-  var user_id = security.checkCredentials(msg);
+  var user_id = await security.checkCredentials(msg);
 
   // cloudant
   var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);

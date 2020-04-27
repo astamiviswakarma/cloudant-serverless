@@ -12,10 +12,10 @@ var getSelector = function(ownerid, query) {
   return query;
 };
 
-function main(msg) {
+async function main(msg) {
 
   // security
-  var user_id = security.checkCredentials(msg);
+  var user_id = await security.checkCredentials(msg);
   var params = utils.allowParams(['keys', 'include_docs','conflicts'], msg);
 
   // cloudant

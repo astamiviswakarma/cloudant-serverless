@@ -3,10 +3,10 @@ var security = require('./lib/security.js');
 var utils = require('./lib/utils.js');
 var cloudant = require('./lib/db.js');
 
-function main(msg) {
+async function main(msg) {
 
   // security
-  var user_id = security.checkCredentials(msg);
+  var user_id = await security.checkCredentials(msg);
 
   // cloudant
   var dbname = msg.CLOUDANT_DATABASE;
