@@ -63,11 +63,15 @@ packages:
         function: actions/post_bulk_get.js
         runtime: nodejs:10
         web-export: true
+        include:
+          - ["actions/lib/*.js", "./lib/"]
       revsDiff:
         version: 1.0
         function: actions/revs_diff.js
         runtime: nodejs:10
         web-export: true
+        include:
+          - ["actions/lib/*.js", "./lib/"]
     apis:
       CloudantAppIdFunctionsNodejs:
         CloudantAppIdFunctionsNodejs:
