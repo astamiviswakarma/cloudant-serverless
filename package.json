@@ -7,9 +7,19 @@
   "author": "Astami <astami@shipperstack.com>",
   "license": "Apache-2.0",
   "private": false,
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'"
+  },
   "dependencies": {
     "@cloudant/cloudant": "^4.2.4",
+    "path": "^0.12.7",
     "request": "^2.88.2",
-    "underscore": "^1.10.2"
+    "underscore": "^1.10.2",
+    "webpack": "^4.43.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
   }
 }

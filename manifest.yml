@@ -1,105 +1,75 @@
 # wskdeploy manifest file
 
 packages:
-  CloudantAppIdFunctionsNodejs:
+  CloudFunctionEnvoyServerless:
     version: 1.0
     license: Apache-2.0
     inputs:
-      services.appid.url: "{{APPID_URL}}"
-      services.cloudant.url: "{{CLOUDANT_URL}}"
-      services.cloudant.database: "{{CLOUDANT_DATABASE}}"
+      services.appid.url: $APPID_URL
+      services.cloudant.url: $CLOUDANT_URL
+      services.cloudant.database: $CLOUDANT_DATABASE
     actions:
       delete:
-        version: 1.0
-        function: actions/del_db.js
+        function: dist/del_db.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       put:
-        version: 1.0
-        function: actions/put_db.js
+        function: dist/put_db.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       getAllDocs:
-        version: 1.0
-        function: actions/all_docs.js
+        function: dist/all_docs.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       postAllDocs:
-        version: 1.0
-        function: actions/all_docs.js
+        function: dist/all_docs.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       changes:
-        version: 1.0
-        function: actions/changes.js
+        function: dist/changes.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       bulkDocs:
-        version: 1.0
-        function: actions/bulk_docs.js
+        function: dist/bulk_docs.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       bulkGet:
-        version: 1.0
-        function: actions/get_bulk_get.js
+        function: dist/get_bulk_get.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       postBulkGet:
-        version: 1.0
-        function: actions/post_bulk_get.js
+        function: dist/post_bulk_get.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
       revsDiff:
-        version: 1.0
-        function: actions/revs_diff.js
+        function: dist/revs_diff.js
         runtime: nodejs:10
         web-export: true
-        include:
-          - ["actions/lib/*.js", "./lib/"]
     apis:
-      CloudantAppIdFunctionsNodejs:
-        CloudantAppIdFunctionsNodejs:
-          envoy/serverless":
+      CloudFunctionEnvoyServerless:
+        envoy:
+          serverless:
             put:
               method: "PUT"
-          envoy/serverless":
             delete:
               method: "DELETE"
-          envoy/serverless/_all_docs":
+          serverless/_all_docs:
             getAllDocs:
               method: "GET"
-          envoy/serverless/_all_docs:
             postAllDocs:
               method: "POST"
-          envoy/serverless/_changes:
+          serverless/_changes:
             changes:
               method: "GET"
-          envoy/serverless/_bulk_docs:
+          serverless/_bulk_docs:
             bulkDocs:
               method: "POST"
-          envoy/serverless/_bulk_get:
+          serverless/_bulk_get:
             bulkGet:
               method: "GET"
-          envoy/serverless/_bulk_get:
             postBulkGet:
               method: "POST"
-          envoy/serverless/_revs_diff:
+          serverless/_revs_diff:
             revsDiff:
               method: "POST"
 
