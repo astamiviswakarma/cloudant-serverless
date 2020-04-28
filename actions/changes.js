@@ -10,7 +10,7 @@ async function main(msg) {
   var params = utils.allowParams(['style', 'since', 'timeout','include_docs'], msg);
 
   // cloudant
-  var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);
+  var db = cloudant.configure(msg['services.cloudant.url'], msg['services.cloudant.database']);
 
   // use Mango filtering https://github.com/apache/couchdb-couch/pull/162
   params.limit = 100;
@@ -41,4 +41,4 @@ async function main(msg) {
   })
 }
 
-exports.main = main;
+global.main = main;

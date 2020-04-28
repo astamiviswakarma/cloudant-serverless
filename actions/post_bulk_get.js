@@ -11,7 +11,7 @@ async function main(msg) {
   var qs = utils.allowParams(['revs', 'latest', 'attachments'], msg);
 
   // cloudant
-  var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);
+  var db = cloudant.configure(msg['services.cloudant.url'], msg['services.cloudant.database']);
 
   // filter incoming doc id list
   if (msg.docs) {
@@ -48,4 +48,4 @@ async function main(msg) {
   });
 }
 
-exports.main = main;
+global.main = main;

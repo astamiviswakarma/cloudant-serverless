@@ -19,7 +19,7 @@ async function main(msg) {
   var params = utils.allowParams(['keys', 'include_docs','conflicts'], msg);
 
   // cloudant
-  var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);
+  var db = cloudant.configure(msg['services.cloudant.url'], msg['services.cloudant.database']);
 
   // if the user is asking for specific keys
   if (params.keys) {
@@ -38,4 +38,4 @@ async function main(msg) {
   }
 }
 
-exports.main = main;
+global.main = main;

@@ -10,4 +10,4 @@ async function main() {
   };
 }
 
-exports.main = main;
+global.main = main;

@@ -8,7 +8,7 @@ async function main(msg) {
   var user_id = await security.checkCredentials(msg);
 
   // cloudant
-  var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);
+  var db = cloudant.configure(msg['services.cloudant.url'], msg['services.cloudant.database']);
 
   // if we have been passed a path, then this is a DEL /db/<docid> request
   if (msg.__ow_path && msg.__ow_path.length) {
@@ -32,4 +32,4 @@ async function main(msg) {
 
 };
 
-exports.main = main;
+global.main = main;

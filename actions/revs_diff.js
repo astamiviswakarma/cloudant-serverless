@@ -32,4 +32,4 @@ async function main(msg) {
   });
 }
 
-exports.main = main;
+global.main = main;

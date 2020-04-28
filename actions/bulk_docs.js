@@ -19,7 +19,7 @@ async function main(msg) {
   params.new_edits = typeof params.new_edits === 'undefined' ? true : params.new_edits;
 
   // cloudant
-  var db = cloudant.configure(msg.CLOUDANT_URL, msg.CLOUDANT_DATABASE);
+  var db = cloudant.configure(msg['services.cloudant.url'], msg['services.cloudant.database']);
 
   // Iterate through docs, adding uuids when missing and adding owner ids
   if (params.docs && params.docs.length) {
@@ -38,4 +38,4 @@ async function main(msg) {
   return db.bulk(params).then(filterReply);
 }
 
-exports.main = main;
+global.main = main;
