@@ -5,4 +5,5 @@ steps:
 - name: build
   image: node:10-jessie
   commands:
-    - npm install --production
+    - npm install
+    - npm run build
