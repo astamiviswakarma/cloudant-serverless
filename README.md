@@ -5,7 +5,7 @@ A modern take on cloudant per user database using IBM AppID, Cloudant and Server
 @see https://cloud.ibm.com/docs/openwhisk?topic=cloud-functions-runtimes
 
 
-# build
+# build and deploy
 ```
 $ npm install
 $ npm run build
