@@ -6,6 +6,8 @@ A modern take on cloudant per user database using IBM AppID, Cloudant and Server
 
 
 # build
+```
 $ npm install
 $ npm run build
 $ ./deploy.sh
+```
